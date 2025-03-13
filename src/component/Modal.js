@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useCart } from './CartContext';
 import '../assets/Modal.css';
 
-const Modal = ({ pizza, optionalIngredients, onClose, onAddToCart }) => {
+const Modal = ({ pizza, optionalIngredients, onClose }) => {
     const [selectedIngredients, setSelectedIngredients] = useState([]);
+    const navigate = useNavigate();
+    const { addToCart } = useCart();
 
     useEffect(() => {
         console.log("Modal received optionalIngredients:", optionalIngredients); // Debug log
@@ -19,7 +23,14 @@ const Modal = ({ pizza, optionalIngredients, onClose, onAddToCart }) => {
     };
 
     const handleAddToCart = () => {
-        onAddToCart(pizza, selectedIngredients);
+        // Ajouter au panier en utilisant le contexte
+        addToCart(pizza, selectedIngredients);
+
+        // Fermer le modal
+        onClose();
+
+        // Rediriger vers la page panier
+        navigate('/cart');
     };
 
     return (

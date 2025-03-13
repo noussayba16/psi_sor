@@ -1,141 +1,9 @@
-/* Modal.css */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background-color: white;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-}
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.modal-header {
-    padding: 15px 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.modal-body {
-    padding: 20px;
-}
-
-.modal-footer {
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #eee;
-}
-
-.modal-pizza-image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin-right: 20px;
-}
-
-.pizza-details {
-    display: flex;
-    margin-bottom: 20px;
-}
-
-.quantity-selector, .ingredients-selector, .order-summary {
-    margin-bottom: 20px;
-}
-
-.quantity-controls {
-    display: flex;
-    align-items: center;
-}
-
-.quantity-controls button {
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    cursor: pointer;
-}
-
-.quantity-controls span {
-    margin: 0 10px;
-    font-size: 16px;
-}
-
-.ingredients-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-.ingredient-item {
-    padding: 5px 0;
-}
-
-.ingredient-label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.ingredient-label input {
-    margin-right: 10px;
-}
-
-.cancel-button, .add-to-cart-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.cancel-button {
-    background-color: #f0f0f0;
-}
-
-.add-to-cart-button {
-    background-color: red;
-    color: white;
-}
-
 /* Cart.css */
 .cart-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-}
-
-.empty-cart {
-    text-align: center;
-    padding: 50px 0;
+    font-family: Arial, sans-serif;
 }
 
 .cart-items {
@@ -144,126 +12,130 @@
 
 .cart-item {
     display: flex;
-    border: 1px solid #eee;
-    border-radius: 8px;
+    justify-content: space-between;
+    align-items: flex-start;
     padding: 15px;
     margin-bottom: 15px;
-    position: relative;
-}
-
-.cart-item-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cart-item-details {
     flex: 1;
 }
 
-.quantity-control {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
+.cart-item h2 {
+    margin-top: 0;
+    color: #333;
 }
 
-.quantity-control button {
-    width: 25px;
-    height: 25px;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.item-description {
+    color: #666;
+    margin-bottom: 10px;
 }
 
-.quantity-control span {
-    margin: 0 10px;
+.selected-ingredients {
+    margin: 15px 0;
 }
 
-.additional-ingredients {
-    margin: 10px 0;
-}
-
-.additional-ingredients ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 5px 0;
-}
-
-.additional-ingredients li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3px 0;
-}
-
-.remove-ingredient {
-    background: none;
-    border: none;
-    color: red;
-    cursor: pointer;
+.selected-ingredients h3 {
     font-size: 16px;
+    margin-bottom: 5px;
 }
 
-.item-subtotal {
+.selected-ingredients ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.selected-ingredients li {
+    padding: 3px 0;
+    color: #555;
+}
+
+.item-total {
     font-weight: bold;
+    color: #e74c3c;
     margin-top: 10px;
 }
 
 .remove-item {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
+    background-color: #e74c3c;
+    color: white;
     border: none;
-    color: #888;
+    border-radius: 4px;
+    padding: 8px 12px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-item:hover {
+    background-color: #c0392b;
 }
 
 .cart-summary {
     background-color: #f9f9f9;
-    border-radius: 8px;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.total-price {
-    font-size: 20px;
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 20px;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .cart-actions {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
-.clear-cart, .checkout-button {
-    padding: 10px 20px;
-    border: none;
+.continue-shopping {
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
     border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-.clear-cart {
-    background-color: #f0f0f0;
+.continue-shopping:hover {
+    background-color: #2980b9;
 }
 
 .checkout-button {
-    background-color: red;
-    color: white;
-}
-
-.continue-shopping-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #2ecc71;
     color: white;
     border: none;
+    padding: 10px 20px;
     border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
-    font-weight: bold;
-    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.checkout-button:hover {
+    background-color: #27ae60;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.empty-cart p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
 }
