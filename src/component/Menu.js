@@ -51,7 +51,7 @@ const Menu = () => {
 
     return (
         <div className="menu">
-            <h1>Notre Menu</h1>
+            <h1>Notre Menus</h1>
             <div className="pizza-grid">
                 {pizzas.map(pizza => (
                     <div
