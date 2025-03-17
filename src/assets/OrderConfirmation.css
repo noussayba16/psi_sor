@@ -1,0 +1,72 @@
+.confirmation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.confirmation-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.success-icon {
+    margin-bottom: 20px;
+}
+
+.success-icon svg {
+    width: 80px;
+    height: 80px;
+    color: #4bb71b;
+    stroke: #4bb71b;
+}
+
+.confirmation-card h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.order-details {
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.order-details p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.delivery-info {
+    margin-bottom: 30px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.confirmation-actions {
+    margin-top: 30px;
+}
+
+.primary-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.primary-button:hover {
+    background-color: #c0392b;
+}
